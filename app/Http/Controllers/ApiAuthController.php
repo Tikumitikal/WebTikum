@@ -6,9 +6,11 @@ use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class ApiAuthController extends Controller
 {
+
     //register
     public function register(Request $request)
     {
@@ -46,6 +48,7 @@ class ApiAuthController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ]);
+
         $user = User::where('email', $data['email'])->first();
         if (!$user) {
             return response([
@@ -67,6 +70,7 @@ class ApiAuthController extends Controller
 
         return response($res, 200);
     }
+
     public function userlogin()
     {
         $user = request()->user();

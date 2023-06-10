@@ -7,10 +7,10 @@
 @section('content')
 
 <div class="container-scroller">
-      
+
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
-        
+
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
